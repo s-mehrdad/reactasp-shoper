@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33920.267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "razorasp-shoper", "razorasp-shoper.csproj", "{27919D72-DEA6-457B-BF34-2A3B779E7134}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27919D72-DEA6-457B-BF34-2A3B779E7134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27919D72-DEA6-457B-BF34-2A3B779E7134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27919D72-DEA6-457B-BF34-2A3B779E7134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27919D72-DEA6-457B-BF34-2A3B779E7134}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {993ECED0-532F-4B6F-9717-1FC33AB419A0}
+	EndGlobalSection
+EndGlobal
