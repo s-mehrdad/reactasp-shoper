@@ -5,10 +5,10 @@
 /// created by Mehrdad Soleimanimajd on 01.08.2023
 /// </summary>
 /// <created>ʆϒʅ, 01.08.2023</created>
-/// <changed>ʆϒʅ, 06.08.2023</changed>
+/// <changed>ʆϒʅ, 08.08.2023</changed>
 // ===========================================================================
 
-namespace webapi_shoper
+namespace webapi.Models
 {
     public class WeatherForecast
     {

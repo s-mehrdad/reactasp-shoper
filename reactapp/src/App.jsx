@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 01.08.2023
 /// </summary>
 /// <created>ʆϒʅ, 01.08.2023</created>
-/// <changed>ʆϒʅ, 06.08.2023</changed>
+/// <changed>ʆϒʅ, 08.08.2023</changed>
 // ===========================================================================
 
 import React, { Component } from "react";
@@ -16,10 +16,12 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = { forecasts: [], loading: true };
+        this.stateT = { pro: 'aaa' };
     }
 
     componentDidMount() {
         this.populateWeatherData();
+        this.populateProductsData();
     }
 
     static renderForecastsTable(forecasts) {
@@ -66,6 +68,7 @@ export default class App extends Component {
         return (
             <div>
                 <h1 id="tabelLabel">Weather forecast</h1>
+                <p>{this.stateT.pro}</p>
                 <p>
                     This component demonstrates fetching data from the server.
                 </p>
@@ -79,5 +82,12 @@ export default class App extends Component {
         const data = await response.json();
         console.log(data);
         this.setState({ forecasts: data, loading: false });
+    }
+
+    async populateProductsData() {
+        const response = await fetch("weatherforecast/action");
+        const data = await response.text();
+        console.log(data);
+        this.setState({ pro: data });
     }
 }

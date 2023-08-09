@@ -5,19 +5,20 @@
 /// created by Mehrdad Soleimanimajd on 01.08.2023
 /// </summary>
 /// <created>ʆϒʅ, 01.08.2023</created>
-/// <changed>ʆϒʅ, 06.08.2023</changed>
+/// <changed>ʆϒʅ, 09.08.2023</changed>
 // ===========================================================================
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System.Data.SqlTypes;
+using Microsoft.Data.Sqlite;
 using webapi_shoper.Models;
 
 namespace webapi_shoper.Data
 {
+
     public class shoperSQLEContext: DbContext
     {
         public shoperSQLEContext(DbContextOptions<shoperSQLEContext> options)
@@ -57,4 +58,6 @@ namespace webapi_shoper.Data
             modelBuilder.Entity<Purchase>().ToTable("Purchases");
         }
     }
+
+    //initil
 }

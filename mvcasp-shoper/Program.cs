@@ -1,3 +1,13 @@
+// ===========================================================================
+/// <summary>
+/// Program.cs
+/// project
+/// created by Mehrdad Soleimanimajd on 02.08.2023
+/// </summary>
+/// <created>ʆϒʅ, 02.08.2023</created>
+/// <changed>ʆϒʅ, 09.08.2023</changed>
+// ===========================================================================
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using mvcasp_shoper.Data;
@@ -8,6 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -20,12 +31,20 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
-}
-else
+} else
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<ApplicationDbContext>();
+    context.Database.EnsureCreated();
+    Initialize.Initializer(context);
 }
 
 app.UseHttpsRedirection();

@@ -1,21 +1,49 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// ===========================================================================
+/// <summary>
+/// HomeController.cs
+/// project
+/// created by Mehrdad Soleimanimajd on 02.08.2023
+/// </summary>
+/// <created>ʆϒʅ, 02.08.2023</created>
+/// <changed>ʆϒʅ, 09.08.2023</changed>
+// ===========================================================================
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using mvcasp_shoper.Data;
 using mvcasp_shoper.Models;
 using System.Diagnostics;
+using System.Text.Encodings.Web;
 
 namespace mvcasp_shoper.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController: Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDbContext _context;
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        //private readonly ILogger<HomeController> _logger;
+
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        public async Task<IActionResult> Index(string searchField, int howMany = 3)
         {
-            return View();
+            var todos = from m in _context.Todos select m;
+            if (!(Int16.MaxValue < howMany))
+            {
+                ViewData["soMany"] = howMany;
+            }
+            if (!String.IsNullOrEmpty(searchField))
+            {
+                todos = todos.Where(item => item.Name.Contains(searchField));
+            }
+            return View(await todos.ToArrayAsync());
         }
 
         public IActionResult Privacy()
