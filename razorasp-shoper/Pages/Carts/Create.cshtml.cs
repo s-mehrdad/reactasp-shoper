@@ -1,4 +1,14 @@
-﻿using System;
+﻿// ===========================================================================
+/// <summary>
+/// Create.cshtml.cs
+/// razorasp-shoper
+/// created by Mehrdad Soleimanimajd on 03.08.2023
+/// </summary>
+/// <created>ʆϒʅ, 03.08.2023</created>
+/// <changed>ʆϒʅ, 12.08.2023</changed>
+// ===========================================================================
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

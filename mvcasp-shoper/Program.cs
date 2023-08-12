@@ -1,16 +1,17 @@
 // ===========================================================================
 /// <summary>
 /// Program.cs
-/// project
+/// mvcasp-shoper
 /// created by Mehrdad Soleimanimajd on 02.08.2023
 /// </summary>
 /// <created>ʆϒʅ, 02.08.2023</created>
-/// <changed>ʆϒʅ, 09.08.2023</changed>
+/// <changed>ʆϒʅ, 12.08.2023</changed>
 // ===========================================================================
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using mvcasp_shoper.Data;
+using System.Buffers.ArrayBufferWriter
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,7 +45,7 @@ using (var scope = app.Services.CreateScope())
 
     var context = services.GetRequiredService<ApplicationDbContext>();
     context.Database.EnsureCreated();
-    Initialize.Initializer(context);
+    ApplicationDbContext.Initializer(context);
 }
 
 app.UseHttpsRedirection();

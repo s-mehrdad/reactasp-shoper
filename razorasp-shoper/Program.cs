@@ -1,4 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿// ===========================================================================
+/// <summary>
+/// Program.cs
+/// razorasp-shoper
+/// created by Mehrdad Soleimanimajd on 02.08.2023
+/// </summary>
+/// <created>ʆϒʅ, 02.08.2023</created>
+/// <changed>ʆϒʅ, 12.08.2023</changed>
+// ===========================================================================
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +45,7 @@ using (var scope = app.Services.CreateScope())
 
     // early development stages (recreate)
     context.Database.EnsureCreated();
-    DbInitializer.Initialize(context);
+    shoperContext.Initialize(context);
 }
 
 app.UseHttpsRedirection();

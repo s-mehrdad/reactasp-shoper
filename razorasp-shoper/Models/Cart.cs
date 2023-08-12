@@ -1,4 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// ===========================================================================
+/// <summary>
+/// Cart.cs
+/// razorasp-shoper
+/// created by Mehrdad Soleimanimajd on 02.08.2023
+/// </summary>
+/// <created>ʆϒʅ, 02.08.2023</created>
+/// <changed>ʆϒʅ, 12.08.2023</changed>
+// ===========================================================================
+
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace razorasp_shoper.Models

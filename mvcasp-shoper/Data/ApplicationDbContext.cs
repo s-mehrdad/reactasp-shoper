@@ -1,11 +1,11 @@
 ﻿// ===========================================================================
 /// <summary>
 /// ApplicationDbContext.cs
-/// project
+/// mvcasp-shoper
 /// created by Mehrdad Soleimanimajd on 02.08.2023
 /// </summary>
 /// <created>ʆϒʅ, 02.08.2023</created>
-/// <changed>ʆϒʅ, 09.08.2023</changed>
+/// <changed>ʆϒʅ, 12.08.2023</changed>
 // ===========================================================================
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -32,11 +32,6 @@ namespace mvcasp_shoper.Data
             builder.Entity<TodoModel>().ToTable("Todos");
         }
 
-
-    }
-
-    public class Initialize
-    {
         public static void Initializer(ApplicationDbContext _context)
         {
             if (!_context.Todos.Any())
@@ -52,5 +47,7 @@ namespace mvcasp_shoper.Data
                 _context.SaveChanges();
             }
         }
+
     }
+
 }
