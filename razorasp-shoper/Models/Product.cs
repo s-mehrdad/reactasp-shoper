@@ -12,7 +12,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace razorasp_shoper.Models
 {
-    public enum Categories { لوازم, Appliance, Gadgets, Tech, Tools, Categories }
+    public enum Categories { Wearables, لوازم, Appliance, Gadgets, Tech, Tools, Categories }
     public class Product
     {
 

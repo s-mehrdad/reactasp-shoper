@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using webapi_shoper.Controllers;
 using webapi_shoper.Data;
 using webapi_shoper.Models;
 
@@ -31,8 +32,6 @@ builder.Services.AddDbContext<shoperSQLiteContext>(
     throw new InvalidOperationException("Connection string 'shoperSQLiteContext' not found."))
     );
 
-var sqlite = new DbConnections(builder.Configuration.GetConnectionString("shoperSQLiteContextSQL"));
-
 
 
 // configure services.
@@ -45,6 +44,8 @@ var sqlite = new DbConnections(builder.Configuration.GetConnectionString("shoper
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
+WeatherForecastController._connection = builder.Configuration.GetConnectionString("shoperSQLiteContext");
 
 
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();

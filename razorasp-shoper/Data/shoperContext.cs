@@ -45,25 +45,29 @@ namespace razorasp_shoper.Data
                 var products = new Product[]
                 {
                     new Product {
-                        Name= "p1", Model="m1",
+                        Name= "p1", Model="m1", Category=Categories.Appliance,
                         Image="./resources/TalkativeAndShy.bmp"
                     },
                     new Product {
-                        Name= "p2", Model="m1", Category=Categories.Appliance,
+                        Name= "p2", Model="m1", Category=Categories.Gadgets,
                         Description="description",
                         Image="./resources/TalkativeAndShy.bmp"
                     },
                     new Product {
-                        Name= "p3", Model="m2", Category= Categories.Gadgets,
+                        Name= "p3", Model="m2", Category= Categories.Wearables,
                         Description="",
                         Image="./resources/TalkativeAndShy.bmp"
                     },
                     new Product {
-                        Name= "p4", Model="m2",
+                        Name= "p4", Model="m2", Category=Categories.Tech,
                         Image="./resources/TalkativeAndShy.bmp"
                     },
                     new Product {
-                        Name= "p5", Model="m3",
+                        Name= "p5", Model="m3", Category=Categories.Tools,
+                        Image="./resources/TalkativeAndShy.bmp"
+                    },
+                    new Product {
+                        Name= "p6", Model="m3", Category=Categories.لوازم,
                         Image="./resources/TalkativeAndShy.bmp"
                     },
                 };

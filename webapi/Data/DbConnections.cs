@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 01.08.2023
 /// </summary>
 /// <created>ʆϒʅ, 01.08.2023</created>
-/// <changed>ʆϒʅ, 09.08.2023</changed>
+/// <changed>ʆϒʅ, 14.08.2023</changed>
 // ===========================================================================
 
 //using System;
@@ -15,6 +15,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.Sqlite;
 using webapi_shoper.Models;
+using NuGet.Protocol;
+using System.Data.Common;
 
 namespace webapi_shoper.Data
 {
@@ -39,17 +41,66 @@ namespace webapi_shoper.Data
             connection.Close();
         }
 
-        //public DbSet<Cart> Carts { get; set; }
-        //public DbSet<Product> Products { get; set; }
-        //public DbSet<Purchase> Purchases { get; set; }
+        public int[] ProductTable()
+        {
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    modelBuilder.Entity<Cart>().ToTable("Carts");
-        //    modelBuilder.Entity<Product>().ToTable("Products");
-        //    modelBuilder.Entity<Purchase>().ToTable("Purchases");
-        //}
+            connection.Open();
+
+            // create a table
+            var command = connection.CreateCommand();
+            command.CommandText = @"select * from Products";
+
+            //command.CommandText = @"Drop Table Products;Drop Table Products2;Alter Table Products3 Drop column test;";
+            //command.CommandText = @"Alter Table Products3 Change c2 test INT;";
+            var result = command.ExecuteReaderAsync();
+            SqliteDataReader reader = null;
+            var aaa = result.Result.GetEnumerator();
+
+            //var r = result.Result.;
+
+
+            var numberOfColumns = result.Result.VisibleFieldCount;
+
+            int[] ids = new int[numberOfColumns];
+            string[] names = new string[numberOfColumns];
+            string[] models = new string[numberOfColumns];
+            string[] descriptions = new string[numberOfColumns];
+            string[] categories = new string[numberOfColumns];
+            var index = 0;
+
+            //List<Product> columns = null;
+            //Product temp = null;
+
+            while (result.Result.Read())
+            {
+                for (int i = 0; i < numberOfColumns; i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            ids[index] = result.Result.GetInt32(i);
+                            break;
+                        case 1:
+                            names[index] = result.Result.GetString(i);
+                            break;
+                        case 2:
+                            names[index] = result.Result.GetString(i);
+                            break;
+                        case 3:
+                            names[index] = result.Result.GetString(i);
+                            break;
+                        case 4:
+                            names[index] = result.Result.GetString(i);
+                            break;
+                    }
+
+                }
+                index++;
+            }
+
+            connection.Close();
+            return ids;
+        }
 
     }
 }
