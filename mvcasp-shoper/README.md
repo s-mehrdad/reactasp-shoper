@@ -1,5 +1,5 @@
 # Introduction 
-React on ASP core Web application.
+MVC ASP Web application.
 
 <table>
 <tr>
@@ -14,13 +14,13 @@ React on ASP core Web application.
 Open Visual Studio solution file respectively.
 
 2.  Software dependencies:<br/>
-Portable on supported web browsers executed on platforms supporting ASP.
+Portable on supported web browsers executed on platforms providing ASP toolchain.
 
 3.  Latest releases:<br/>
 The source code is released.
 
 4.  API references:<br/>
-React and ASP core APIs.
+ASP Model View Control APIs.
 
 # Build and Test
 Visual Studio installed and configured correctly

@@ -14,13 +14,17 @@
             <th>@Html.DisplayNameFor(model=> model.filteredProducts[0].Category)</th>
             <th>@Html.DisplayNameFor(model=> model.filteredProducts[0].Image)</th>
         </tr>
+        <br />
         <form>
-            <label title="Title: ">
-                <input type="text" asp-for="searchField" placeholder="search for" />
-                <input type="submit" value="Filter" />
+            <label for="searchField" title="search">
+                Search For:
+                <input tabindex="1" name="searchField" type="text" asp-for="searchField" placeholder="shoƥer..." />
+                <input tabindex="-1" type="submit" value="Filter" />
             </label>
-            <label title="Category: ">
-                <select asp-for="categoryField" asp-items="Model.categoryList" onload="">
+            <label for="categoryField" title="category">
+                <br />
+                Category:
+                <select name="categoryField" asp-for="categoryField" asp-items="Model.categoryList" onload="">
                     <option selected>Select Category</option>
                 </select>
             </label>
